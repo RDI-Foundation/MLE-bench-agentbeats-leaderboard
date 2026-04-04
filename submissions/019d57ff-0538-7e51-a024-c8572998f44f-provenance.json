@@ -1,0 +1,22 @@
+{
+  "image_digests": {
+    "/agent": "ghcr.io/mihail-olegovich/mle-bench-kmo-purple-agent@sha256:a87d0f21e33ebfbbde49dabb9306c0eac1743d3473a1a4d3334fd3f07850c69f",
+    "/gateway": "ghcr.io/rdi-foundation/agentbeats-gateway@sha256:3f9976889c598092dc4273312ec431cbc48bbe064ff65b5613425f4990bc1d4c",
+    "/green": "ghcr.io/rdi-foundation/mle-bench-green@sha256:8b7f8f4495b08c119aef228ff5bb8d0e718d15ef1b5b561764f9a1204ec39678"
+  },
+  "manifest_digests": {
+    "/": "sha256:G0+3u7r+uJNrF/1hCrvONpJWAx2U7DZtfmFweRRuje4=",
+    "/agent": "sha256:5VTsoryKRMasS4XUkDTBYIklkwOuKBfY4BEU6GZRCn4=",
+    "/gateway": "sha256:0nK+Cnn/T4UOQIP2JqNrAx8gHGVWjBsCUTBFgYgC44c=",
+    "/green": "sha256:7tVpGL/3HImBVckA7bJ3MVKh1Z+lDuXWD2U751Kphyk="
+  },
+  "timestamp": "2026-04-04T10:20:55Z",
+  "github_actions": {
+    "run_url": "https://github.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/actions/runs/23976888235",
+    "ref": "refs/pull/13/merge",
+    "sha": "0f2fc4385340ac38e340b326c4f5ccfeeb5b0c64",
+    "repository_url": "https://github.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard",
+    "workflow_ref": "RDI-Foundation/MLE-bench-agentbeats-leaderboard/.github/workflows/quick-submit.yml@refs/pull/13/merge",
+    "workflow_sha": "0f2fc4385340ac38e340b326c4f5ccfeeb5b0c64"
+  }
+}
