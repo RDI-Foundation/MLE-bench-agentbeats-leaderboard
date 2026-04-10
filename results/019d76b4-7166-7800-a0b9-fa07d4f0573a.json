@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "participants": {
+    "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+    "agent": "019d76a4-608f-7de3-8ce9-c82ad201d093"
+  },
+  "results": [
+    {
+      "competition_id": "spaceship-titanic",
+      "score": null,
+      "gold_threshold": 0.82066,
+      "silver_threshold": 0.81388,
+      "bronze_threshold": 0.80967,
+      "median_threshold": 0.79565,
+      "any_medal": false,
+      "gold_medal": false,
+      "silver_medal": false,
+      "bronze_medal": false,
+      "above_median": false,
+      "submission_exists": true,
+      "valid_submission": false,
+      "is_lower_better": false,
+      "created_at": "2026-04-10T10:16:05.669843",
+      "submission_path": "/tmp/tmpuxkb7m8j.csv"
+    }
+  ]
+}
