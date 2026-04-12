@@ -1,0 +1,93 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "agent_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "agent_llm_base_url": {
+        "type": "string"
+      },
+      "agent_llm_model": {
+        "type": "string"
+      },
+      "green_kaggle_key": {
+        "type": "string",
+        "secret": true
+      },
+      "green_kaggle_username": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "green_kaggle_username",
+      "green_kaggle_key",
+      "agent_llm_api_key",
+      "agent_llm_base_url",
+      "agent_llm_model"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.3/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "competition_id": "spaceship-titanic"
+        },
+        "participant_roles": {
+          "green": "green",
+          "purple1": "agent"
+        },
+        "callback_urls": {}
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/dc976eb529168efca0eb85a06acd1eb59648d711/amber/amber-manifest-green.json5",
+      "config": {
+        "kaggle_key": "${config.green_kaggle_key}",
+        "kaggle_username": "${config.green_kaggle_username}"
+      }
+    },
+    "agent": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.agent_llm_api_key}",
+        "llm_base_url": "${config.agent_llm_base_url}",
+        "llm_model": "${config.agent_llm_model}"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#agent.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#agent.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+      "agent": "019d81cd-8c3b-7b41-96dc-276d6b23576a"
+    }
+  }
+}
