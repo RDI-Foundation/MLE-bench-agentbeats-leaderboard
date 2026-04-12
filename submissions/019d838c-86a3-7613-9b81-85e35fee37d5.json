@@ -1,0 +1,301 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "claude_haiku_4_6_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "claude_haiku_4_6_llm_base_url": {
+        "type": "string"
+      },
+      "claude_haiku_4_6_llm_model": {
+        "type": "string"
+      },
+      "claude_sonnet_4_6_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "claude_sonnet_4_6_llm_base_url": {
+        "type": "string"
+      },
+      "claude_sonnet_4_6_llm_model": {
+        "type": "string"
+      },
+      "gemini_3_1_pro_preview_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "gemini_3_1_pro_preview_llm_base_url": {
+        "type": "string"
+      },
+      "gemini_3_1_pro_preview_llm_model": {
+        "type": "string"
+      },
+      "glm_5_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "glm_5_llm_base_url": {
+        "type": "string"
+      },
+      "glm_5_llm_model": {
+        "type": "string"
+      },
+      "gpt_5_4_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "gpt_5_4_llm_base_url": {
+        "type": "string"
+      },
+      "gpt_5_4_llm_model": {
+        "type": "string"
+      },
+      "gpt_5_4_mini_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "gpt_5_4_mini_llm_base_url": {
+        "type": "string"
+      },
+      "gpt_5_4_mini_llm_model": {
+        "type": "string"
+      },
+      "green_kaggle_key": {
+        "type": "string",
+        "secret": true
+      },
+      "green_kaggle_username": {
+        "type": "string",
+        "secret": true
+      },
+      "qwen3_5_397b_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "qwen3_5_397b_llm_base_url": {
+        "type": "string"
+      },
+      "qwen3_5_397b_llm_model": {
+        "type": "string"
+      },
+      "qwen3_max_thinking_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "qwen3_max_thinking_llm_base_url": {
+        "type": "string"
+      },
+      "qwen3_max_thinking_llm_model": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "green_kaggle_username",
+      "green_kaggle_key",
+      "gemini_3_1_pro_preview_llm_api_key",
+      "glm_5_llm_api_key",
+      "qwen3_5_397b_llm_api_key",
+      "claude_sonnet_4_6_llm_api_key",
+      "claude_haiku_4_6_llm_api_key",
+      "gpt_5_4_mini_llm_api_key",
+      "gpt_5_4_llm_api_key",
+      "qwen3_max_thinking_llm_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.3/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "competition_id": "spaceship-titanic"
+        },
+        "participant_roles": {
+          "green": "green",
+          "purple1": "gemini_3_1_pro_preview",
+          "purple2": "glm_5",
+          "purple3": "qwen3_5_397b",
+          "purple4": "claude_sonnet_4_6",
+          "purple5": "claude_haiku_4_6",
+          "purple6": "gpt_5_4_mini",
+          "purple7": "gpt_5_4",
+          "purple8": "qwen3_max_thinking"
+        },
+        "callback_urls": {}
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/dc976eb529168efca0eb85a06acd1eb59648d711/amber/amber-manifest-green.json5",
+      "config": {
+        "kaggle_key": "${config.green_kaggle_key}",
+        "kaggle_username": "${config.green_kaggle_username}"
+      }
+    },
+    "gemini_3_1_pro_preview": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.gemini_3_1_pro_preview_llm_api_key}",
+        "llm_base_url": "${config.gemini_3_1_pro_preview_llm_base_url}",
+        "llm_model": "${config.gemini_3_1_pro_preview_llm_model}"
+      }
+    },
+    "glm_5": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.glm_5_llm_api_key}",
+        "llm_base_url": "${config.glm_5_llm_base_url}",
+        "llm_model": "${config.glm_5_llm_model}"
+      }
+    },
+    "qwen3_5_397b": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.qwen3_5_397b_llm_api_key}",
+        "llm_base_url": "${config.qwen3_5_397b_llm_base_url}",
+        "llm_model": "${config.qwen3_5_397b_llm_model}"
+      }
+    },
+    "claude_sonnet_4_6": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.claude_sonnet_4_6_llm_api_key}",
+        "llm_base_url": "${config.claude_sonnet_4_6_llm_base_url}",
+        "llm_model": "${config.claude_sonnet_4_6_llm_model}"
+      }
+    },
+    "claude_haiku_4_6": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.claude_haiku_4_6_llm_api_key}",
+        "llm_base_url": "${config.claude_haiku_4_6_llm_base_url}",
+        "llm_model": "${config.claude_haiku_4_6_llm_model}"
+      }
+    },
+    "gpt_5_4_mini": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.gpt_5_4_mini_llm_api_key}",
+        "llm_base_url": "${config.gpt_5_4_mini_llm_base_url}",
+        "llm_model": "${config.gpt_5_4_mini_llm_model}"
+      }
+    },
+    "gpt_5_4": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.gpt_5_4_llm_api_key}",
+        "llm_base_url": "${config.gpt_5_4_llm_base_url}",
+        "llm_model": "${config.gpt_5_4_llm_model}"
+      }
+    },
+    "qwen3_max_thinking": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.qwen3_max_thinking_llm_api_key}",
+        "llm_base_url": "${config.qwen3_max_thinking_llm_base_url}",
+        "llm_model": "${config.qwen3_max_thinking_llm_model}"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#gemini_3_1_pro_preview.a2a"
+    },
+    {
+      "to": "#gateway.purple2",
+      "from": "#glm_5.a2a"
+    },
+    {
+      "to": "#gateway.purple3",
+      "from": "#qwen3_5_397b.a2a"
+    },
+    {
+      "to": "#gateway.purple4",
+      "from": "#claude_sonnet_4_6.a2a"
+    },
+    {
+      "to": "#gateway.purple5",
+      "from": "#claude_haiku_4_6.a2a"
+    },
+    {
+      "to": "#gateway.purple6",
+      "from": "#gpt_5_4_mini.a2a"
+    },
+    {
+      "to": "#gateway.purple7",
+      "from": "#gpt_5_4.a2a"
+    },
+    {
+      "to": "#gateway.purple8",
+      "from": "#qwen3_max_thinking.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#gemini_3_1_pro_preview.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#glm_5.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#qwen3_5_397b.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#claude_sonnet_4_6.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#claude_haiku_4_6.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#gpt_5_4_mini.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#gpt_5_4.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#qwen3_max_thinking.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+      "gemini_3_1_pro_preview": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "glm_5": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "qwen3_5_397b": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "claude_sonnet_4_6": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "claude_haiku_4_6": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "gpt_5_4_mini": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "gpt_5_4": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "qwen3_max_thinking": "019d81cd-8c3b-7b41-96dc-276d6b23576a"
+    }
+  }
+}
