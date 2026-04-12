@@ -1,16 +1,11 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+agentbeats_id = "019d0bcf-de7f-76d1-b290-c30e65ddbd1f"
+env = { }
 
 [[participants]]
 agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+name = "agent"
+env = { NEBIUS_API_KEY = "${NEBIUS_API_KEY}" }
 
 [config]
-# Add your assessment config here
+competition_id = "spaceship-titanic"
