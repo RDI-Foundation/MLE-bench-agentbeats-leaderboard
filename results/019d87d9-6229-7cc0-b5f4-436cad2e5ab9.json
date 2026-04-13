@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "participants": {
+    "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+    "agent": "019d80d8-0ff5-75b2-9c69-7819ed7b2bd6"
+  },
+  "results": [
+    {
+      "competition_id": "denoising-dirty-documents",
+      "score": 0.01262,
+      "gold_threshold": 0.01794,
+      "silver_threshold": 0.02609,
+      "bronze_threshold": 0.04517,
+      "median_threshold": 0.07325,
+      "any_medal": true,
+      "gold_medal": true,
+      "silver_medal": false,
+      "bronze_medal": false,
+      "above_median": true,
+      "submission_exists": true,
+      "valid_submission": true,
+      "is_lower_better": true,
+      "created_at": "2026-04-13T19:26:14.330965",
+      "submission_path": "/tmp/tmpnb1df0rh.csv"
+    }
+  ]
+}
