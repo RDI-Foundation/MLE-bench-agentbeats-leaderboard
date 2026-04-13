@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "participants": {
+    "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+    "agent": "019d80d8-0ff5-75b2-9c69-7819ed7b2bd6"
+  },
+  "results": [
+    {
+      "competition_id": "mlsp-2013-birds",
+      "score": 0.87512,
+      "gold_threshold": 0.93527,
+      "silver_threshold": 0.90038,
+      "bronze_threshold": 0.87372,
+      "median_threshold": 0.86572,
+      "any_medal": true,
+      "gold_medal": false,
+      "silver_medal": false,
+      "bronze_medal": true,
+      "above_median": true,
+      "submission_exists": true,
+      "valid_submission": true,
+      "is_lower_better": false,
+      "created_at": "2026-04-13T19:29:43.581206",
+      "submission_path": "/tmp/tmp7mxbsxy7.csv"
+    }
+  ]
+}
