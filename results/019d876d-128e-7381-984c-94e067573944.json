@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "participants": {
+    "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+    "agent": "019d80d8-0ff5-75b2-9c69-7819ed7b2bd6"
+  },
+  "results": [
+    {
+      "competition_id": "aerial-cactus-identification",
+      "score": 0.99995,
+      "gold_threshold": 1.0,
+      "silver_threshold": 1.0,
+      "bronze_threshold": 1.0,
+      "median_threshold": 0.9991,
+      "any_medal": false,
+      "gold_medal": false,
+      "silver_medal": false,
+      "bronze_medal": false,
+      "above_median": true,
+      "submission_exists": true,
+      "valid_submission": true,
+      "is_lower_better": false,
+      "created_at": "2026-04-13T16:15:15.866597",
+      "submission_path": "/tmp/tmpp4cz5zd1.csv"
+    }
+  ]
+}
