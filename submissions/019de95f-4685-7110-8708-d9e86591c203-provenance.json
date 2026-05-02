@@ -1,0 +1,22 @@
+{
+  "image_digests": {
+    "/agent": "ghcr.io/whatswrongwithyourmitochondria/icu-mle-purple@sha256:3e3cb9329a1807d8cb137586b3d17eac5e45450cf45f383fcfe0df8530a186f3",
+    "/gateway": "ghcr.io/rdi-foundation/agentbeats-gateway@sha256:3f9976889c598092dc4273312ec431cbc48bbe064ff65b5613425f4990bc1d4c",
+    "/green": "ghcr.io/rdi-foundation/mle-bench-green@sha256:8b7f8f4495b08c119aef228ff5bb8d0e718d15ef1b5b561764f9a1204ec39678"
+  },
+  "manifest_digests": {
+    "/": "sha256:M1n7OYAr9tj1fjECn13FiZ4VRdkktexkUMyYbKGVZyI=",
+    "/agent": "sha256:rwa+EMpObDPxQHU+HxYXrwxaTzce1V/59Yv4xtrDpeQ=",
+    "/gateway": "sha256:55vdRwO+54k8WBZhh3nrN6Gn7cnk/+hm1dG+xt/GYSE=",
+    "/green": "sha256:hNhxfmXX6dm7nh75P2p5FZulX7SQTHhBKHViLiBAZ2A="
+  },
+  "timestamp": "2026-05-02T15:51:07Z",
+  "github_actions": {
+    "run_url": "https://github.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/actions/runs/25255654628",
+    "ref": "refs/pull/428/merge",
+    "sha": "545e3ed187d18b334ca5800565a4674cc154405a",
+    "repository_url": "https://github.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard",
+    "workflow_ref": "RDI-Foundation/MLE-bench-agentbeats-leaderboard/.github/workflows/quick-submit.yml@refs/pull/428/merge",
+    "workflow_sha": "545e3ed187d18b334ca5800565a4674cc154405a"
+  }
+}
