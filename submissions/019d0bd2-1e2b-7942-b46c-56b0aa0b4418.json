@@ -1,0 +1,74 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "green_kaggle_key": {
+        "type": "string",
+        "secret": true
+      },
+      "green_kaggle_username": {
+        "type": "string",
+        "secret": true
+      }
+    },
+    "required": [
+      "green_kaggle_username",
+      "green_kaggle_key"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.1/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "competition_id": "spaceship-titanic"
+        },
+        "participant_roles": {
+          "green": "green",
+          "purple1": "agent"
+        },
+        "callback_urls": {
+          "green": "${bindings.green-proxy.url}"
+        }
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/dc976eb529168efca0eb85a06acd1eb59648d711/amber/amber-manifest-green.json5",
+      "config": {
+        "kaggle_key": "${config.green_kaggle_key}",
+        "kaggle_username": "${config.green_kaggle_username}"
+      }
+    },
+    "agent": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/dc976eb529168efca0eb85a06acd1eb59648d711/amber/amber-manifest-purple.json5",
+      "config": {}
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#agent.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true,
+      "name": "green-proxy"
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+      "agent": "019d0bd1-9a4b-7f30-b1ad-5210f51c47ec"
+    }
+  }
+}
