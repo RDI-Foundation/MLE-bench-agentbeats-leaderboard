@@ -1,0 +1,221 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "claude_opus_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "claude_opus_llm_base_url": {
+        "type": "string"
+      },
+      "claude_opus_llm_model": {
+        "type": "string"
+      },
+      "gemini_pro_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "gemini_pro_llm_base_url": {
+        "type": "string"
+      },
+      "gemini_pro_llm_model": {
+        "type": "string"
+      },
+      "glm_5_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "glm_5_llm_base_url": {
+        "type": "string"
+      },
+      "glm_5_llm_model": {
+        "type": "string"
+      },
+      "gpt_5_4_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "gpt_5_4_llm_base_url": {
+        "type": "string"
+      },
+      "gpt_5_4_llm_model": {
+        "type": "string"
+      },
+      "green_kaggle_key": {
+        "type": "string",
+        "secret": true
+      },
+      "green_kaggle_username": {
+        "type": "string",
+        "secret": true
+      },
+      "qwen_max_llm_api_key": {
+        "type": "string",
+        "secret": true
+      },
+      "qwen_max_llm_base_url": {
+        "type": "string"
+      },
+      "qwen_max_llm_model": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "green_kaggle_username",
+      "green_kaggle_key",
+      "gemini_pro_llm_api_key",
+      "gemini_pro_llm_base_url",
+      "gemini_pro_llm_model",
+      "claude_opus_llm_api_key",
+      "claude_opus_llm_base_url",
+      "claude_opus_llm_model",
+      "gpt_5_4_llm_api_key",
+      "gpt_5_4_llm_base_url",
+      "gpt_5_4_llm_model",
+      "glm_5_llm_api_key",
+      "glm_5_llm_base_url",
+      "glm_5_llm_model",
+      "qwen_max_llm_api_key",
+      "qwen_max_llm_base_url",
+      "qwen_max_llm_model"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.3/amber-manifest.json5",
+      "config": {
+        "assessment_config": {
+          "competition_id": "spaceship-titanic"
+        },
+        "participant_roles": {
+          "green": "green",
+          "purple1": "gemini_pro",
+          "purple2": "claude_opus",
+          "purple3": "gpt_5_4",
+          "purple4": "glm_5",
+          "purple5": "qwen_max"
+        },
+        "callback_urls": {}
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/MLE-bench-agentbeats-leaderboard/dc976eb529168efca0eb85a06acd1eb59648d711/amber/amber-manifest-green.json5",
+      "config": {
+        "kaggle_key": "${config.green_kaggle_key}",
+        "kaggle_username": "${config.green_kaggle_username}"
+      }
+    },
+    "gemini_pro": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.gemini_pro_llm_api_key}",
+        "llm_base_url": "${config.gemini_pro_llm_base_url}",
+        "llm_model": "${config.gemini_pro_llm_model}"
+      }
+    },
+    "claude_opus": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.claude_opus_llm_api_key}",
+        "llm_base_url": "${config.claude_opus_llm_base_url}",
+        "llm_model": "${config.claude_opus_llm_model}"
+      }
+    },
+    "gpt_5_4": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.gpt_5_4_llm_api_key}",
+        "llm_base_url": "${config.gpt_5_4_llm_base_url}",
+        "llm_model": "${config.gpt_5_4_llm_model}"
+      }
+    },
+    "glm_5": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.glm_5_llm_api_key}",
+        "llm_base_url": "${config.glm_5_llm_base_url}",
+        "llm_model": "${config.glm_5_llm_model}"
+      }
+    },
+    "qwen_max": {
+      "manifest": "https://raw.githubusercontent.com/tenishevnikita/mle-purple-agent/main/amber-manifest.json5",
+      "config": {
+        "llm_api_key": "${config.qwen_max_llm_api_key}",
+        "llm_base_url": "${config.qwen_max_llm_base_url}",
+        "llm_model": "${config.qwen_max_llm_model}"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#gemini_pro.a2a"
+    },
+    {
+      "to": "#gateway.purple2",
+      "from": "#claude_opus.a2a"
+    },
+    {
+      "to": "#gateway.purple3",
+      "from": "#gpt_5_4.a2a"
+    },
+    {
+      "to": "#gateway.purple4",
+      "from": "#glm_5.a2a"
+    },
+    {
+      "to": "#gateway.purple5",
+      "from": "#qwen_max.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#gemini_pro.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#claude_opus.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#gpt_5_4.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#glm_5.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#qwen_max.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019d0bcf-de7f-76d1-b290-c30e65ddbd1f",
+      "gemini_pro": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "claude_opus": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "gpt_5_4": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "glm_5": "019d81cd-8c3b-7b41-96dc-276d6b23576a",
+      "qwen_max": "019d81cd-8c3b-7b41-96dc-276d6b23576a"
+    }
+  }
+}
